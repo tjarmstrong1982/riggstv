@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riggs TV</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Video.js default skin -->
+  <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Top bar with logo and actions -->
+  <header class="topbar">
+    <button id="hamburger" aria-label="Open menu" class="icon-button">☰</button>
+    <h1 class="logo">Riggs TV</h1>
+    <button id="search-toggle" aria-label="Search channels" class="icon-button">🔍</button>
+  </header>
+
+  <!-- Sidebar menu -->
+  <nav id="sidebar" class="sidebar hidden">
+    <div class="sidebar-header">
+      <h2>Riggs TV</h2>
+      <button id="sidebar-close" aria-label="Close menu" class="icon-button">×</button>
+    </div>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><button id="random-channel" class="link-button">Random Channel</button></li>
+      <li><button id="favorites-view" class="link-button">Favorites</button></li>
+    </ul>
+    <hr />
+    <h3>Explore</h3>
+    <ul id="category-list" class="menu"></ul>
+  </nav>
+
+  <!-- Main content area -->
+  <main class="content">
+    <div id="globe-container" class="globe-container"></div>
+    <aside id="info-panel" class="info-panel">
+      <div id="country-header" class="country-header"></div>
+      <div id="channel-list" class="channel-list"></div>
+    </aside>
+  </main>
+
+  <!-- Video overlay -->
+  <div id="video-overlay" class="video-overlay hidden">
+    <div class="video-wrapper">
+      <video id="video-player" class="video-js vjs-default-skin" controls autoplay preload="auto"></video>
+      <button id="close-video" class="icon-button close-video" aria-label="Close video">×</button>
+      <button id="favorite-toggle" class="icon-button favorite" aria-label="Toggle favorite">☆</button>
+    </div>
+  </div>
+
+  <!-- Dependencies -->
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+  <script src="https://unpkg.com/globe.gl"></script>
+  <script src="https://unpkg.com/luxon@3/build/global/luxon.min.js"></script>
+  <script src="https://unpkg.com/video.js/dist/video.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
